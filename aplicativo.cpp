@@ -27,10 +27,14 @@ void PrintService(string message){
 
 };
 
+
+/// @brief Este servicio imprime una lista de mensajes
+/// @param messages debe ser de tipo list<string>{}
 void PrintService(const list<string>& messages) {
-    for (const auto& msg : messages) {
-        cout << msg << endl;
+    for (const auto& porCadaMensajes : messages) {
+        cout << porCadaMensajes;
     }
+    cout << endl;
 }
 
 
@@ -88,7 +92,10 @@ int main(){
     cin>>asignatura2.Nota;
     PrintService({"Ingrese la nota de ", asignatura3.Nombre});
     cin>>asignatura3.Nota;
-    PrintService(list<string>{"El promedio del estudiante ", estudiante1.Nombre, " es: ", to_string(PromedioNotas(asignatura1,asignatura2,asignatura3))});
+    PrintService(list<string>{"El promedio del estudiante ", 
+        estudiante1.Nombre, 
+        " es: ", 
+        to_string(PromedioNotas(asignatura1,asignatura2,asignatura3))});
 
 
     
