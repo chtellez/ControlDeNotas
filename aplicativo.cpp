@@ -88,10 +88,7 @@ int main(){
     cin>>asignatura2.Nota;
     PrintService({"Ingrese la nota de ", asignatura3.Nombre});
     cin>>asignatura3.Nota;
-    PrintService({"El promedio del estudiante ",
-                    estudiante1.Nombre, 
-                    " es: ", 
-                    to_string(PromedioNotas(asignatura1,asignatura2,asignatura3))});
+    PrintService(list<string>{"El promedio del estudiante ", estudiante1.Nombre, " es: ", to_string(PromedioNotas(asignatura1,asignatura2,asignatura3))});
 
 
     
