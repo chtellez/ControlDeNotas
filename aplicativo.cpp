@@ -20,7 +20,7 @@ class Materia
 
 
 
-void main(){
+int main(){
     Estudiante Estudiante1;
     Estudiante Estudiante2;
 
@@ -30,5 +30,6 @@ void main(){
     cout << Estudiante1.Nombre << endl;
     cout << Estudiante2.Nombre << endl;
 
+    return 0;
 
 };
