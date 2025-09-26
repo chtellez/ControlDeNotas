@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 using namespace std;
 
 
@@ -26,17 +27,11 @@ void PrintService(string message){
 
 };
 
-void PrintService(float message){
-
-    cout<<message<<endl;
-
-};
-
-void PrintService(string message1, string message2){
-
-    cout<<message1<<message2<<endl;
-
-};
+void PrintService(const list<string>& messages) {
+    for (const auto& msg : messages) {
+        cout << msg << endl;
+    }
+}
 
 
 /// @brief Formatos de decoracion para el texto. 
@@ -87,13 +82,16 @@ int main(){
     Welcome();
     PrintService("Ingrese el nombre del estudiante");
     cin>>estudiante1.Nombre;
-    PrintService("Ingrese la nota de ", asignatura1.Nombre);
+    PrintService({"Ingrese la nota de ", asignatura1.Nombre});
     cin>>asignatura1.Nota;
-    PrintService("Ingrese la nota de ", asignatura2.Nombre);
+    PrintService({"Ingrese la nota de ", asignatura2.Nombre});
     cin>>asignatura2.Nota;
-    PrintService("Ingrese la nota de ", asignatura3.Nombre);
+    PrintService({"Ingrese la nota de ", asignatura3.Nombre});
     cin>>asignatura3.Nota;
-    PrintService(PromedioNotas(asignatura1,asignatura2,asignatura3));
+    PrintService({"El promedio del estudiante ",
+                    estudiante1.Nombre, 
+                    " es: ", 
+                    to_string(PromedioNotas(asignatura1,asignatura2,asignatura3))});
 
 
     
