@@ -19,16 +19,42 @@ class Materia
 };
 
 
+void PrintService(string message){
+
+    cout<<message<<endl;
+
+};
+
+void MessageDecorationService(int type) {
+
+    switch (type)
+    {
+    case 1:
+        cout<<"================================================================="<<endl;
+        break;
+    case 2:
+        cout<<"*****************************************************************"<<endl;
+        break;
+    default:
+        break;
+    }
+
+};
+
+
+void Welcome(){
+
+    MessageDecorationService(1);
+    PrintService("Hola, Bienvenido a tu super aplicativo de notas");
+    MessageDecorationService(1);
+
+
+};
+
 
 int main(){
-    Estudiante Estudiante1;
-    Estudiante Estudiante2;
 
-    Estudiante1.Nombre = "Felipe";
-    Estudiante2.Nombre = "Juan";
-
-    cout << Estudiante1.Nombre << endl;
-    cout << Estudiante2.Nombre << endl;
+    Welcome();
 
     return 0;
 
